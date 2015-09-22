@@ -1,0 +1,12 @@
+---
+
+- hosts: all
+  pre_tasks:
+    - name: APT | Install PHP-CLI
+      apt: pkg=php5-cli state=present cache_valid_time=3600 update_cache=yes
+  roles:
+    - ../../
+  post_tasks:
+    - name: SHELL | Ensure Phalcon is installed and enabled
+      shell: php -i | grep -i phalcon
+      changed_when: false

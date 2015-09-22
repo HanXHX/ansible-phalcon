@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: Emilien Mantel
+  description: PHP Phalcon 
+  company:
+  license: GPLv2
+  min_ansible_version: 1.2
+  platforms:
+  - name: Debian
+    versions:
+    - jessie
+  categories:
+  - development
+  - packaging
+  - web
+dependencies: []
+ 

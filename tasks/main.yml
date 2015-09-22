@@ -1,0 +1,15 @@
+---
+
+- name: ASSERT | Check OS
+  assert:
+    that: ansible_distribution_release == 'jessie'
+
+- name: APT_KEY | Get APT key repository
+  apt_key: id=0x31F49B93 keyserver=pgp.mit.edu
+#  apt_key: url=http://apt.debianiste.org/dists/jessie/Release.gpg
+
+- name: APT_REPOSITORY | Installs repository
+  apt_repository: repo="{{ phalcon_apt }}"
+
+- name: APT | Install Phalcon
+  apt: pkg={{ phalcon_package }} state=present

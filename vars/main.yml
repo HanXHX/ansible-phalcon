@@ -1,0 +1,4 @@
+---
+
+phalcon_apt: 'deb http://apt.debianiste.org/debian {{ ansible_distribution_release }} main'
+phalcon_package: 'php5-phalcon'
