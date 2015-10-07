@@ -1,6 +1,8 @@
 Phalcon PHP Ansible role for Debian
 ===================================
 
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-HanXHX.phalcon-blue.svg)](https://galaxy.ansible.com/list#/roles/5212)
+
 Install [Phalcon](https://phalconphp.com/) module on Debian Jessie. Note: Debian Wheezy will come later.
 
 Requirements
