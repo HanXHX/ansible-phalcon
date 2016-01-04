@@ -4,6 +4,8 @@
   pre_tasks:
     - name: APT | Install PHP-CLI
       apt: pkg=php5-cli state=present cache_valid_time=3600 update_cache=yes
+  vars:
+    phalcon_version: '2.0.8-1'
   roles:
     - ../../
   post_tasks:

@@ -13,7 +13,7 @@ You should install with PHP with another role.
 Role Variables
 --------------
 
-No variables.
+`phalcon_version`: (optional) specify phalcon version
 
 Dependencies
 ------------
