@@ -13,7 +13,7 @@ You should install with PHP with another role.
 Role Variables
 --------------
 
-`phalcon_version`: (optional) specify phalcon version
+`phalcon_version`: (optional) Specify phalcon version. If unsef (default), it installs latest version on repository.
 
 Dependencies
 ------------
