@@ -13,4 +13,6 @@
 - name: APT | Install Phalcon
   apt:
     pkg="{{ phalcon_package }}{% if phalcon_version is defined %}={{ phalcon_version }}{% endif %}"
+    update_cache=yes
+    cache_valid_time=3600
     state=present
