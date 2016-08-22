@@ -1,5 +1,12 @@
 env:
-  - PLATFORM=debian-jessie
+  - PLATFORM=debian-jessie-php5-legacy
+  - PLATFORM=debian-jessie-php5
+  - PLATFORM=debian-jessie-php7
+
+matrix:
+  allow_failures:
+    - env: PLATFORM=debian-jessie-php5-legacy
+    - env: PLATFORM=debian-jessie-php7 
 
 sudo: required
 
