@@ -4,14 +4,16 @@ galaxy_info:
   description: PHP Phalcon 
   company:
   license: GPLv2
-  min_ansible_version: 1.2
+  min_ansible_version: 2.0
   platforms:
   - name: Debian
     versions:
     - jessie
-  categories:
-  - development
-  - packaging
+  galaxy_tags:
+  - php
+  - php7 
   - web
+  - framework
+  - phalcon
 dependencies: []
  

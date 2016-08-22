@@ -1,0 +1,14 @@
+---
+
+- name: APT | Install apt-transport-https
+  apt: >
+    pkg=apt-transport-https
+    state=present
+    update_cache=yes
+    cache_valid_time=3600
+
+- name: APT_KEY | Get APT key repository
+  apt_key: url="{{ phalcon_apt_gpg_url }}" 
+
+- name: APT_REPOSITORY | Installs repository
+  apt_repository: repo="{{ phalcon_apt }}"

@@ -1,4 +1,8 @@
 ---
 
-phalcon_apt: 'deb http://apt.debianiste.org/debian {{ ansible_distribution_release }} main'
-phalcon_package: 'php5-phalcon'
+phalcon_legacy_apt: 'deb http://apt.debianiste.org/debian {{ ansible_distribution_release }} main'
+
+# Official
+phalcon_apt_gpg_url: 'https://packagecloud.io/phalcon/stable/gpgkey'
+phalcon_apt: "deb https://packagecloud.io/phalcon/stable/debian/ {{ ansible_distribution_release }} main"
+phalcon_apt_src: "deb-src https://packagecloud.io/phalcon/stable/debian/ {{ ansible_distribution_release }} main"

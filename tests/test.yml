@@ -1,14 +1,25 @@
 ---
 
+- hosts: php7
+  tasks:
+    - block:
+      - name: APT_KEY | Add Dotdeb GPG
+        apt_key: url='https://www.dotdeb.org/dotdeb.gpg'
+      - name: APT_REPOSTORY | Add Dotdeb repository
+        apt_repository: repo='deb http://packages.dotdeb.org jessie all'
+      when: ansible_distribution_release == 'jessie' 
+
 - hosts: all
   pre_tasks:
-    - name: APT | Install PHP-CLI
-      apt: pkg=php5-cli state=present cache_valid_time=3600 update_cache=yes
-  vars:
-    phalcon_version: '2.0.8-1'
+    - name: APT | Install packages 
+      apt: pkg={{ item }} state=present cache_valid_time=3600 update_cache=yes
+      with_items: "{{ test_packages }}"
   roles:
     - ../../
   post_tasks:
     - name: SHELL | Ensure Phalcon is installed and enabled
       shell: php -i | grep -i phalcon
+      changed_when: false
+    - name: COMMAND | Display Phalcon version
+      command: php -r 'echo Phalcon\Version::get() . "\n";'
       changed_when: false

@@ -1,14 +1,12 @@
 ---
 
-- name: ASSERT | Check OS
-  assert:
-    that: ansible_distribution_release == 'jessie'
+- name: INCLUDE | Legacy install
+  include: legacy.yml
+  when: phalcon_legacy
 
-- name: APT_KEY | Get APT key repository
-  apt_key: id=0x31F49B93 keyserver=pgp.mit.edu
-
-- name: APT_REPOSITORY | Installs repository
-  apt_repository: repo="{{ phalcon_apt }}"
+- name: INCLUDE | Install
+  include: install.yml
+  when: not phalcon_legacy
 
 - name: APT | Install Phalcon
   apt:
