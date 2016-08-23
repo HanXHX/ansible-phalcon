@@ -1,12 +1,13 @@
 ---
 
-- name: ASSERT | Check OS
-  assert:
-    that: ansible_distribution_release == 'jessie'
-
 - name: APT_KEY | Get APT key repository
-  apt_key: id=0x31F49B93 keyserver=pgp.mit.edu
+  apt_key: >
+    id=0x31F49B93
+    keyserver=pgp.mit.edu
+    state="{{ 'present' if phalcon_legacy else 'absent' }}"
 
 - name: APT_REPOSITORY | Installs repository
-  apt_repository: repo="{{ phalcon_legacy_apt }}"
+  apt_repository: >
+    repo="{{ phalcon_legacy_apt }}"
+    state="{{ 'present' if phalcon_legacy else 'absent' }}"
 

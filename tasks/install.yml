@@ -8,7 +8,11 @@
     cache_valid_time=3600
 
 - name: APT_KEY | Get APT key repository
-  apt_key: url="{{ phalcon_apt_gpg_url }}" 
+  apt_key: >
+    url="{{ phalcon_apt_gpg_url }}"
+    state="{{ 'absent' if phalcon_legacy else 'present' }}"
 
 - name: APT_REPOSITORY | Installs repository
-  apt_repository: repo="{{ phalcon_apt }}"
+  apt_repository: >
+    repo="{{ phalcon_apt }}"
+    state="{{ 'absent' if phalcon_legacy else 'present' }}"

@@ -2,11 +2,9 @@
 
 - name: INCLUDE | Legacy install
   include: legacy.yml
-  when: phalcon_legacy
 
 - name: INCLUDE | Install
   include: install.yml
-  when: not phalcon_legacy
 
 - name: APT | Install Phalcon
   apt:
