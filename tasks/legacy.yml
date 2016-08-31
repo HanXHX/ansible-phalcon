@@ -10,4 +10,3 @@
   apt_repository: >
     repo="{{ phalcon_legacy_apt }}"
     state="{{ 'present' if phalcon_legacy else 'absent' }}"
-

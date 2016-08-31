@@ -1,3 +1,2 @@
-phalcon_package: 'php5-phalcon'
 test_packages:
   - php5-cli

@@ -15,7 +15,7 @@ Role Variables
 
 - `phalcon_legacy`: (boolean) Uses Phalcon 2. Set false (default) to use latest version.
 - `phalcon_version`: (optional) Specify phalcon version. If //null// (default), it installs latest version on repository.
-- `phalcon_package` : (string) Package name.
+- `phalcon_package` : (string) Package name. If you don't set this variable, this role parses you PHP cli to find the best package (be careful if you want PHP5 and your main php command links to PHP7).
 
 About PHP7
 ----------

@@ -1,3 +1,3 @@
 phalcon_legacy: false
 phalcon_version: null
-phalcon_package: 'php5-phalcon'
+phalcon_package: null
