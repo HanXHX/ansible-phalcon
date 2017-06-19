@@ -1,8 +1,5 @@
 ---
 
-- name: INCLUDE | Legacy install
-  include: legacy.yml
-
 - name: INCLUDE | Install
   include: install.yml
 

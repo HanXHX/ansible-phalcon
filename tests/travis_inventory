@@ -1,22 +1,12 @@
-debian-jessie-php5-legacy ansible_connection=local
 debian-jessie-php5 ansible_connection=local
 debian-jessie-php7 ansible_connection=local
 
 [php5]
-debian-jessie-php5-legacy
 debian-jessie-php5
 
 [php7]
 debian-jessie-php7
 
-[phalcon2]
-debian-jessie-php5-legacy
-
-[phalcon3]
-debian-jessie-php5
-debian-jessie-php7
-
 [jessie]
-debian-jessie-php5-legacy
 debian-jessie-php5
 debian-jessie-php7

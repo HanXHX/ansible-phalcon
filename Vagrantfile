@@ -6,17 +6,13 @@
 Vagrant.configure("2") do |config|
 
   vms = [
-    [ "debian-jessie-php5-legacy", "debian/jessie64" ],
     [ "debian-jessie-php5", "debian/jessie64" ],
     [ "debian-jessie-php7", "debian/jessie64" ]
   ]
 
 	ansible_groups = {
-		"php5" => [ "debian-jessie-php5-legacy", "debian-jessie-php5" ],
 		"php7" => [ "debian-jessie-php7" ],
-		"phalcon2" => [ "debian-jessie-php5-legacy" ],
-		"phalcon3" => [ "debian-jessie-php5", "debian-jessie-php7" ],
-		"jessie" => [ "debian-jessie-php5-legacy", "debian-jessie-php5", "debian-jessie-php7" ]
+		"jessie" => [ "debian-jessie-php5", "debian-jessie-php5", "debian-jessie-php7" ]
 	}
 
   config.vm.provider "virtualbox" do |v|

@@ -9,12 +9,10 @@
 
 - name: APT_KEY | Get APT key repository
   apt_key: url="{{ phalcon_apt_gpg_url }}"
-  when: not phalcon_legacy
 
 - name: APT_REPOSITORY | Installs repository
   apt_repository: >
     repo="{{ phalcon_apt }}"
-    state="{{ 'absent' if phalcon_legacy else 'present' }}"
 
 - name: Get PHP
   shell: php --version | grep -o '^PHP [[:digit:]]\.[[:digit:]]' | awk '{ print $NF }'
@@ -35,4 +33,3 @@
   when: >
     phalcon_package is none and
     not phpversion.failed
-
