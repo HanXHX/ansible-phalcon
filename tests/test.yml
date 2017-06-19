@@ -1,20 +1,15 @@
 ---
 
-- hosts: php7
-  tasks:
-    - block:
-      - name: APT_KEY | Add Dotdeb GPG
-        apt_key: url='https://www.dotdeb.org/dotdeb.gpg'
-      - name: APT_REPOSTORY | Add Dotdeb repository
-        apt_repository: repo='deb http://packages.dotdeb.org jessie all'
-      when: ansible_distribution_release == 'jessie' 
+- hosts: sury
+  roles:
+    - HanXHX.debian-sury
 
 - hosts: all
-  pre_tasks:
-    - name: APT | Install packages 
-      apt: pkg={{ item }} state=present cache_valid_time=3600 update_cache=yes
-      with_items: "{{ test_packages }}"
+  vars:
+    php_install_fpm: false
+    php_install_xdebug: false
   roles:
+    - HanXHX.php
     - ../../
   post_tasks:
     - name: SHELL | Ensure Phalcon is installed and enabled
