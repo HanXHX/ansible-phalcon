@@ -36,7 +36,7 @@ before_install:
 install:
   - sudo pip install "$ANSIBLE_VERSION"
   - sudo ansible-galaxy install -f HanXHX.php
-  - sudo ansible-galaxy install -f HanXHX.sury
+  - sudo ansible-galaxy install -f HanXHX.debian-sury
 
 script:
   - VAGRANT_DEFAULT_PROVIDER=docker vagrant up $PLATFORM
