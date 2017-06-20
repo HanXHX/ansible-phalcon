@@ -34,9 +34,9 @@ before_install:
   - sudo dpkg -i vagrant_1.9.5_x86_64.deb
 
 install:
-  - pip install "$ANSIBLE_VERSION"
-  - ansible-galaxy install -f HanXHX.php
-  - ansible-galaxy install -f HanXHX.sury
+  - sudo pip install "$ANSIBLE_VERSION"
+  - sudo ansible-galaxy install -f HanXHX.php
+  - sudo ansible-galaxy install -f HanXHX.sury
 
 script:
   - VAGRANT_DEFAULT_PROVIDER=docker vagrant up $PLATFORM
