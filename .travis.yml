@@ -34,7 +34,7 @@ before_install:
   - sudo dpkg -i vagrant_1.9.5_x86_64.deb
 
 install:
-  - sudo pip install "$ANSIBLE_VERSION"
+  - pip install "$ANSIBLE_VERSION"
   - sudo ansible-galaxy install -f HanXHX.php
   - sudo ansible-galaxy install -f HanXHX.debian-sury
 
