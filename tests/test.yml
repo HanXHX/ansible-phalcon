@@ -5,11 +5,11 @@
     - HanXHX.debian-sury
 
 - hosts: all
-  vars:
-    php_install_fpm: false
-    php_install_xdebug: false
+  pre_tasks:
+    - name: APT | Install PHP
+      apt:
+        pkg: "{{ 'php-cli' if php_version is not defined else 'php' + php_version + '-cli' }}"
   roles:
-    - HanXHX.php
     - ../../
   post_tasks:
     - name: SHELL | Ensure Phalcon is installed and enabled

@@ -33,7 +33,7 @@ Vagrant.configure("2") do |config|
       m.vm.provision "ansible" do |ansible|
         ansible.playbook = "tests/test.yml"
         ansible.verbose = 'vv'
-        ansible.sudo = true
+        ansible.become = true
         ansible.extra_vars = opts[:vars]
         ansible.groups = { opts[:groups][0] => [opts[:name]] }
       end
@@ -50,7 +50,7 @@ Vagrant.configure("2") do |config|
       m.vm.provision "ansible" do |ansible|
         ansible.playbook = "tests/test.yml"
         ansible.verbose = 'vv'
-        ansible.sudo = true
+        ansible.become = true
         ansible.extra_vars = opts[:vars]
         ansible.groups = { opts[:groups][0] => [opts[:name]] }
       end

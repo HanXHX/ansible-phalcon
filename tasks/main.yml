@@ -1,11 +1,11 @@
 ---
 
-- name: INCLUDE | Install
-  include: install.yml
+- name: IMPORT_TASKS | Install
+  import_tasks: install.yml
 
 - name: APT | Install Phalcon
   apt:
-    pkg="{{ phalcon_package }}{% if phalcon_version is not none %}={{ phalcon_version }}{% endif %}"
-    update_cache=yes
-    cache_valid_time=3600
-    state=present
+    pkg: "{{ phalcon_package }}{% if phalcon_version is not none %}={{ phalcon_version }}{% endif %}"
+    update_cache: yes
+    cache_valid_time: 3600
+    state: present
