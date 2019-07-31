@@ -1,43 +1,38 @@
 env:
-  - PLATFORM='docker-debian-jessie-php56'  ANSIBLE_VERSION='ansible>=2.0,<2.1'
-  - PLATFORM='docker-debian-jessie-php70'  ANSIBLE_VERSION='ansible>=2.0,<2.1'
-  - PLATFORM='docker-debian-jessie-php71'  ANSIBLE_VERSION='ansible>=2.0,<2.1'
-  - PLATFORM='docker-debian-stretch-php70' ANSIBLE_VERSION='ansible>=2.0,<2.1'
-  - PLATFORM='docker-debian-stretch-php71' ANSIBLE_VERSION='ansible>=2.0,<2.1'
-  - PLATFORM='docker-debian-jessie-php56'  ANSIBLE_VERSION='ansible>=2.1,<2.2'
-  - PLATFORM='docker-debian-jessie-php70'  ANSIBLE_VERSION='ansible>=2.1,<2.2'
-  - PLATFORM='docker-debian-jessie-php71'  ANSIBLE_VERSION='ansible>=2.1,<2.2'
-  - PLATFORM='docker-debian-stretch-php70' ANSIBLE_VERSION='ansible>=2.1,<2.2'
-  - PLATFORM='docker-debian-stretch-php71' ANSIBLE_VERSION='ansible>=2.1,<2.2'
-  - PLATFORM='docker-debian-jessie-php56'  ANSIBLE_VERSION='ansible>=2.2,<2.3'
-  - PLATFORM='docker-debian-jessie-php70'  ANSIBLE_VERSION='ansible>=2.2,<2.3'
-  - PLATFORM='docker-debian-jessie-php71'  ANSIBLE_VERSION='ansible>=2.2,<2.3'
-  - PLATFORM='docker-debian-stretch-php70' ANSIBLE_VERSION='ansible>=2.2,<2.3'
-  - PLATFORM='docker-debian-stretch-php71' ANSIBLE_VERSION='ansible>=2.2,<2.3'
-  - PLATFORM='docker-debian-jessie-php56'  ANSIBLE_VERSION='ansible>=2.3,<2.4'
-  - PLATFORM='docker-debian-jessie-php70'  ANSIBLE_VERSION='ansible>=2.3,<2.4'
-  - PLATFORM='docker-debian-jessie-php71'  ANSIBLE_VERSION='ansible>=2.3,<2.4'
-  - PLATFORM='docker-debian-stretch-php70' ANSIBLE_VERSION='ansible>=2.3,<2.4'
-  - PLATFORM='docker-debian-stretch-php71' ANSIBLE_VERSION='ansible>=2.3,<2.4'
+  - PLATFORM='docker-debian-jessie-php56'  ANSIBLE_VERSION='ansible>=2.6,<2.7'
+  - PLATFORM='docker-debian-jessie-php70'  ANSIBLE_VERSION='ansible>=2.6,<2.7'
+  - PLATFORM='docker-debian-jessie-php71'  ANSIBLE_VERSION='ansible>=2.6,<2.7'
+  - PLATFORM='docker-debian-stretch-php70' ANSIBLE_VERSION='ansible>=2.6,<2.7'
+  - PLATFORM='docker-debian-stretch-php71' ANSIBLE_VERSION='ansible>=2.6,<2.7'
+  - PLATFORM='docker-debian-buster-php73'  ANSIBLE_VERSION='ansible>=2.6,<2.7'
+  - PLATFORM='docker-debian-jessie-php56'  ANSIBLE_VERSION='ansible>=2.7,<2.8'
+  - PLATFORM='docker-debian-jessie-php70'  ANSIBLE_VERSION='ansible>=2.7,<2.8'
+  - PLATFORM='docker-debian-jessie-php71'  ANSIBLE_VERSION='ansible>=2.7,<2.8'
+  - PLATFORM='docker-debian-stretch-php70' ANSIBLE_VERSION='ansible>=2.7,<2.8'
+  - PLATFORM='docker-debian-stretch-php71' ANSIBLE_VERSION='ansible>=2.7,<2.8'
+  - PLATFORM='docker-debian-buster-php73'  ANSIBLE_VERSION='ansible>=2.7,<2.8'
+
+matrix:
+  fast_finish: true
 
 sudo: required
 
 dist: trusty
 
 language: python
+python: 2.7
 
 services:
   - docker
 
 before_install:
-  - wget https://releases.hashicorp.com/vagrant/1.9.5/vagrant_1.9.5_x86_64.deb
-  - sudo dpkg -i vagrant_1.9.5_x86_64.deb
+  - wget https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb
+  - sudo dpkg -i vagrant_2.0.1_x86_64.deb
 
 install:
   - pip install "$ANSIBLE_VERSION"
   - sudo mkdir /etc/ansible
   - sudo chmod -R 777 /etc/ansible
-  - ansible-galaxy install -f HanXHX.php
   - ansible-galaxy install -f HanXHX.debian-sury
 
 script:

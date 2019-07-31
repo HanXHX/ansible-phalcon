@@ -7,10 +7,13 @@ Install [Phalcon Framework](https://phalconphp.com/) on Debian.
 
 Supported OS :
 
-| OS              | PHP 5.6 | PHP 7.0 | PHP 7.1 |
-| --------------- | ------- | ------- | ------- |
-| Debian Jessie   | Yes     | Yes     | Yes     |
-| Debian Stretch  | No      | Yes     | Yes     |
+| OS              |
+| --------------- |
+| Debian Jessie   |
+| Debian Stretch  |
+| Debian Buster   |
+
+Please note, Debian buster packages are not officialy provided by Phalcon. This role uses Stretch packages for this case.
 
 Requirements
 ------------
