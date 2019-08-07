@@ -9,7 +9,6 @@ Supported OS :
 
 | OS              |
 | --------------- |
-| Debian Jessie   |
 | Debian Stretch  |
 | Debian Buster   |
 

@@ -21,18 +21,7 @@
   failed_when: false
   changed_when: false
 
-- block:
-
-    - name: SET_FACT | Set php5-phalcon
-      set_fact:
-        phalcon_package: 'php5-phalcon'
-      when: phpversion.stdout.find('5') != -1
-
-    - name: SET_FACT | Set package from PHP version (manages PHP 7.x)
-      set_fact:
-        phalcon_package: 'php{{ phpversion.stdout }}-phalcon'
-      when: phpversion.stdout.find('5') == -1
-
-  when:
-    phalcon_package is none and
-    not phpversion.failed
+- name: SET_FACT | Set package from PHP version
+  set_fact:
+    phalcon_package: 'php{{ phpversion.stdout }}-phalcon'
+  when: phalcon_package is none and not phpversion.failed

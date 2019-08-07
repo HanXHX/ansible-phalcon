@@ -6,18 +6,12 @@
 Vagrant.configure("2") do |config|
 
   vms_debian = [
-    { :name => "debian-jessie-php56",  :box => "debian/jessie64",  :vars => { },                      :groups => ['regular'] },
-    { :name => "debian-jessie-php70",  :box => "debian/jessie64",  :vars => { "php_version": '7.0' }, :groups => ['sury'] },
-    { :name => "debian-jessie-php71",  :box => "debian/jessie64",  :vars => { "php_version": '7.1' }, :groups => ['sury'] },
     { :name => "debian-stretch-php70", :box => "debian/stretch64", :vars => { },                      :groups => ['regular'] },
     { :name => "debian-stretch-php71", :box => "debian/stretch64", :vars => { "php_version": '7.1' }, :groups => ['sury'] },
     { :name => "debian-buster-php73",  :box => "debian/buster64",  :vars => { },                      :groups => ['regular'] }
   ]
 
   conts = [
-    { :name => "docker-debian-jessie-php56",  :docker => "hanxhx/vagrant-ansible:debian8",  :vars => { },                      :groups => ['regular'] },
-    { :name => "docker-debian-jessie-php70",  :docker => "hanxhx/vagrant-ansible:debian8",  :vars => { "php_version": '7.0' }, :groups => ['sury'] },
-    { :name => "docker-debian-jessie-php71",  :docker => "hanxhx/vagrant-ansible:debian8",  :vars => { "php_version": '7.1' }, :groups => ['sury'] },
     { :name => "docker-debian-stretch-php70", :docker => "hanxhx/vagrant-ansible:debian9",  :vars => { },                      :groups => ['regular'] },
     { :name => "docker-debian-stretch-php71", :docker => "hanxhx/vagrant-ansible:debian9",  :vars => { "php_version": '7.1' }, :groups => ['sury'] },
     { :name => "docker-debian-buster-php73",  :docker => "hanxhx/vagrant-ansible:debian10", :vars => { },                      :groups => ['regular'] }
