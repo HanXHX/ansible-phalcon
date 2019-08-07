@@ -1,8 +1,5 @@
 ---
 
-# Note: Phalcon doesn't provide packages for Debian Buster, fallback to Stretch
-_distrib: "{{ ansible_distribution_release if ansible_distribution_release != 'buster' else 'stretch' }}"
-
 phalcon_apt_gpg_url: 'https://packagecloud.io/phalcon/stable/gpgkey'
-phalcon_apt: "deb https://packagecloud.io/phalcon/stable/debian/ {{ _distrib }} main"
-phalcon_apt_src: "deb-src https://packagecloud.io/phalcon/stable/debian/ {{ _distrib }} main"
+phalcon_apt: "deb https://packagecloud.io/phalcon/stable/debian/ {{ ansible_distribution_release }} main"
+phalcon_apt_src: "deb-src https://packagecloud.io/phalcon/stable/debian/ {{ ansible_distribution_release }} main"

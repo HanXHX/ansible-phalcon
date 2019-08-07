@@ -13,8 +13,6 @@ Supported OS :
 | Debian Stretch  |
 | Debian Buster   |
 
-Please note, Debian buster packages are not officialy provided by Phalcon. This role uses Stretch packages for this case.
-
 Requirements
 ------------
 
