@@ -1,13 +1,7 @@
 env:
-  - PLATFORM='docker-debian-jessie-php56'  ANSIBLE_VERSION='ansible>=2.6,<2.7'
-  - PLATFORM='docker-debian-jessie-php70'  ANSIBLE_VERSION='ansible>=2.6,<2.7'
-  - PLATFORM='docker-debian-jessie-php71'  ANSIBLE_VERSION='ansible>=2.6,<2.7'
   - PLATFORM='docker-debian-stretch-php70' ANSIBLE_VERSION='ansible>=2.6,<2.7'
   - PLATFORM='docker-debian-stretch-php71' ANSIBLE_VERSION='ansible>=2.6,<2.7'
   - PLATFORM='docker-debian-buster-php73'  ANSIBLE_VERSION='ansible>=2.6,<2.7'
-  - PLATFORM='docker-debian-jessie-php56'  ANSIBLE_VERSION='ansible>=2.7,<2.8'
-  - PLATFORM='docker-debian-jessie-php70'  ANSIBLE_VERSION='ansible>=2.7,<2.8'
-  - PLATFORM='docker-debian-jessie-php71'  ANSIBLE_VERSION='ansible>=2.7,<2.8'
   - PLATFORM='docker-debian-stretch-php70' ANSIBLE_VERSION='ansible>=2.7,<2.8'
   - PLATFORM='docker-debian-stretch-php71' ANSIBLE_VERSION='ansible>=2.7,<2.8'
   - PLATFORM='docker-debian-buster-php73'  ANSIBLE_VERSION='ansible>=2.7,<2.8'
